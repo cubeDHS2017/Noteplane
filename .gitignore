@@ -1,0 +1,31 @@
+# Node.js / React
+node_modules/
+dist/
+.vite/
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python / FastAPI
+__pycache__/
+*.py[cod]
+*.env
+venv/
+env/
+.env
+
+# Database
+*.sqlite3
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+docker-compose.override.yml
