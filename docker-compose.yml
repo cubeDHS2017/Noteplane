@@ -25,4 +25,4 @@ services:
       - "3000:80"
 
 volumes:
-  pgdata: .pgdata
+  pgdata:
