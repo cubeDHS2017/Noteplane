@@ -3,6 +3,8 @@ version: '3.8'
 services:
   backend:
     build: ./backend
+    env_file:
+      - .env
     volumes:
       - ./backend:/app
     ports:
@@ -13,12 +15,14 @@ services:
   db:
     image: postgres
     restart: always
-    environment:
-      POSTGRES_USER: noteplane
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: noteplane
+    env_file: .env
     volumes:
       - pgdata:/var/lib/postgresql/data
+  
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
 
 volumes:
-  pgdata:
+  pgdata: .pgdata

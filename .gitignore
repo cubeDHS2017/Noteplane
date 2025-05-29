@@ -17,6 +17,7 @@ env/
 
 # Database
 *.sqlite3
+.pgdata
 
 # IDEs
 .vscode/
