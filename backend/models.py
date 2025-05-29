@@ -1,7 +1,5 @@
 from sqlalchemy import Column, Integer, Float, Text, ForeignKey, DateTime, func
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from database import Base  # import the Base here
 
 class Card(Base):
     __tablename__ = "cards"

@@ -6,7 +6,7 @@ function App() {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8000/cards")
+    axios.get("/api/cards")
       .then(res => setCards(res.data))
       .catch(err => console.error(err));
   }, []);
