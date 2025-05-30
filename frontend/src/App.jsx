@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
+import './App.css';
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -69,25 +70,42 @@ function App() {
       onMouseUp={onMouseUp}
       style={{ height: "100vh", position: "relative", userSelect: draggingId ? "none" : "auto" }}
     >
-      <h1>noteplane cards</h1>
+	<div className="menuBar">
+	  <div>
+	    <select style={{ padding: '0.3rem' }}>
+	      <option>Canvas 1</option>
+	      <option>Canvas 2</option>
+	      <option>Canvas 3</option>
+	    </select>
+	  </div>
+	  <div style={{ fontWeight: 'bold' }}>Noteplane</div>
+	  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+	    <button>⚙️</button>
+	    <img
+	      src="https://www.gravatar.com/avatar/?d=mp"
+	      alt="User"
+	      style={{ width: 32, height: 32, borderRadius: '50%' }}
+	    />
+	  </div>
+	</div>
       <button onClick={createCard}>Create Card</button>
       <div>
-        {cards.map(card => (
-          <div
-            key={card.id}
-            onMouseDown={(e) => onMouseDown(e, card)}
-            style={{
-              position: 'absolute',
-              left: card.x_pos,
-              top: card.y_pos,
-              border: '1px solid black',
-              padding: '10px',
-              background: 'white',
-              cursor: 'move',
-              userSelect: 'none',
-              width: 150,
-              maxWidth: '80vw',
-            }}
+	{cards.map(card => (
+	  <div
+	    key={card.id}
+	    className="card"
+	    onMouseDown={(e) => onMouseDown(e, card)}
+	    style={{
+	      position: 'absolute',
+	      left: card.x_pos,
+	      top: card.y_pos,
+	      padding: '10px',
+	      background: 'grey',
+	      cursor: 'move',
+	      userSelect: 'none',
+	      width: 150,
+	      maxWidth: '80vw',
+	    }}
           >
             {card.text}
           </div>
