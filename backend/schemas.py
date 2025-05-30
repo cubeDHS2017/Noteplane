@@ -19,3 +19,8 @@ class Card(CardBase):
 
 class Config:
     orm_mode = True
+
+
+class CardUpdate(BaseModel):
+    x_pos: int
+    y_pos: int
